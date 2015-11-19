@@ -1,0 +1,21 @@
+
+%br
+%body{:style => "background-color:lightgrey"}
+%h1 Role & Character name
+%br
+%table#casts
+  %thead
+    %tr
+      %th Role
+      %th Character Name
+      %th
+  - @casts.each do |cast|
+    %tr
+    %p
+      %td
+        = cast.role
+      %td
+        = cast.as
+        
+%br
+= link_to 'Back to Movies', imdb_movies_path

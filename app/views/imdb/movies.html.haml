@@ -1,0 +1,13 @@
+
+%head
+  %title Movies
+%body{:style => "background-color:lightgrey"}
+  %center
+    %h3
+      %b Team: F1 ( Santosh Reddy T , Samsher Rawal)
+%h1 List of Movies
+
+
+= form_tag "/imdb/actors", method: :get do
+  = collection_select(:movie, :id, @movies.all, :id, :name_with_id)
+  = submit_tag "Select Movie"

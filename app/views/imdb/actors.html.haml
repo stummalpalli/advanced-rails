@@ -1,0 +1,8 @@
+%br
+%body{:style => "background-color:lightgrey"}
+%h1 List Of Actors                  
+= form_tag "/imdb/casts", method: :get do
+  = collection_select(:actor, :id, @actors.all, :id, :name)
+  = submit_tag "Select Actor"
+%br/
+= link_to 'Back to Movies', imdb_movies_path
